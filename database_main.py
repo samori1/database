@@ -7,13 +7,22 @@ try:
     db = sqlite3.connect('python_programming.db')
     # Create a cursor object
     cursor = db.cursor()
-    # Create a table
+    """
+    Creating the table.
+    The table will have 3 columns: id, name, grade.
+    """
     cursor.execute('''
                 CREATE TABLE python_programming(id INTEGER PRIMARY KEY,\
                  name TEXT,
                                             grade INTEGER)
     ''')
-    # Create a list of data ready to insert into table
+    """
+    Creating data for the table.
+    The table will have 3 rows for 3 student records: Carl, Dennis and Jane.
+    A list is prepared with the 3 records ready to be inserted into the table.
+    This makes the code more efficient compared to using different variables
+    for each record.
+    """
     students_grades = [(55,'Carl Davis', 61),(66,'Dennis Fredrickson',88),\
         (77,'Jane Richards',78),
                     (12,'Peyton Sawyer', 45),(2,'Lucas Brooke',99)]
